@@ -1,4 +1,4 @@
-function Card({ product, addtocart }) {
+function Card({ product, addtocart, cartlist }) {
     return (
         <div className="col-lg-4">
             <div class="card" style={{ width: "17rem" }}>
@@ -7,7 +7,7 @@ function Card({ product, addtocart }) {
                     <h5 class="card-title">{product.product}</h5>
                     <br></br>
                     <p class="card-text"><b>Price </b>Rs.{product.price}</p>
-                    <button class="btn btn-primary" onClick={() => {
+                    <button disabled={cartlist.some(carditem => carditem.id === product.id)} class="btn btn-primary" onClick={() => {
                         return addtocart(product)
                     }}>Add to Cart</button>
                 </div>

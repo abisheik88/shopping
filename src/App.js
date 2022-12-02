@@ -71,7 +71,7 @@ function App() {
             <div className='col-lg-9'>
               <div className='row'>
                 {data.map((card) => {
-                  return <Card product={card} addtocart={addtocart} />
+                  return <Card product={card} addtocart={addtocart} cartlist={cartlist} />
                 })}
 
               </div>
